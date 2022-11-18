@@ -1,3 +1,13 @@
 <div>
-  list
+  <ul class="list-group pmd-list pmd-card-list">
+    <% @tweets.each do |tweet| %>
+      <li class="list-group-item  d-flex">
+        <%== show_icon(tweet.icon) %>
+        <div class="media-body">
+          <h6> <%= tweet.name %> <h6>
+          <p class="pmd-list-subtitle"> <%= tweet.body %> </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
