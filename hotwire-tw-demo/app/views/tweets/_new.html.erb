@@ -1,0 +1,45 @@
+<h4 class="mb-3">こころのこえをつぶやく</h4>
+<div>
+  <% if @tweet && @tweet.errors.any? %>
+    <div class="alert alert-danger">
+      <ul class="mb-0">
+        <% @tweet.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_with model: @tweet || Tweet.new, local: true do |form| %>
+    <div class="mb-3 row">
+      <%= form.label :icon, "きもち", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.radio_button :icon, :love, class: "form-check-input" %>
+        <%= form.label :icon, value: :love, class: "avator-icon" do%>
+          <%== show_icon(Tweet.icons[:love]) %>
+        <% end %>
+        <%= form.radio_button :icon, :angry, class: "form-check-input" %>
+        <%= form.label :icon, value: :angry, class: "avator-icon" do%>
+          <%== show_icon(Tweet.icons[:angry]) %>
+        <% end %>
+
+        <%= form.radio_button :icon, :smile, class: "form-check-input" %>
+        <%= form.label :icon, value: :smile, class: "avator-icon" do%>
+          <%== show_icon(Tweet.icons[:smile]) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <%= form.label :name, "なまえ", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :name, class: "form-contorol" %>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <%= form.label :body, "こころのこえ", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_area :body, class: "form-contorol col-sm-10" %>
+      </div>
+    </div>
+    <%= form.submit 'つぶやく', class: "btn btn-primary" %>
+  <% end%>
+</div>
