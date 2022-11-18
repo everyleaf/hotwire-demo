@@ -1,0 +1,27 @@
+<li class="tweet-card">
+  <div class="tweet-content">
+    <div class="tweet-header">
+      <span class="fullname">
+        <strong><%= tweet.name %></strong>
+      </span>
+      <span class="tweet-time">
+        <%= link_to "- #{l(tweet.created_at, format: :date)}", tweet_path(tweet) %>
+      </span>
+    </div>
+    <div class="tweet-card-avatar">
+      <%== show_icon(Tweet.icons[tweet.icon]) %>
+    </div>
+    <div class="tweet-text">
+      <p> <%= simple_format tweet.body %> </p>
+    </div>
+    <div class="tweet-footer">
+      <%= button_to like_tweet_path(tweet), method: :put, class: "tweet-footer-btn" do %>
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#balloon-heart-fill"/></svg><span><%=tweet.like_count  %></span>
+      <% end %>
+      <%= button_to tweet, method: :delete, class: "tweet-footer-btn" do %>
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#trash-fill"/></svg>
+        <span>削除</span>
+      <% end %>
+    </div>
+  </div>
+</li>
