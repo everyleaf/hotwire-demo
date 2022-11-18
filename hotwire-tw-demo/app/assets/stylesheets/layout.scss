@@ -1,0 +1,19 @@
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  min-height: 100vh;
+  height: -webkit-fill-available;
+}
+
+main {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  height: -webkit-fill-available;
+  min-height: 100vh;
+  overflow-x: auto;
+  overflow-y: auto;
+}

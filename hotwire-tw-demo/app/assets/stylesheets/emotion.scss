@@ -1,0 +1,69 @@
+.emotion-list {
+  list-style: none;
+  margin: 8px 4px 0;
+  padding: 0;
+}
+.emotion-card {
+  background-color: #fff;
+  border-bottom: 1px solid #e6ecf0;
+  min-height: 52px;
+  padding: 9px 12px;
+}
+
+.emotion-content {
+  margin-left: 58px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: normal;
+}
+
+.emotion-card-avatar {
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  float: left;
+  margin-top: 3px;
+  margin-left: -58px;
+}
+
+.emotion-footer {
+  display: flex;
+}
+
+.emotion-footer-btn {
+  margin-right: 30px;
+}
+
+.emotion-footer-btn i, .emotion-footer-btn span {
+  color: #657786;
+  font-size: 16px;
+}
+
+.emotion-footer-btn span {
+  margin-left: 8px;
+}
+
+button.emotion-footer-btn {
+  border: none;
+  background-color: white;
+}
+
+.avator-icon {
+  padding: 3px;
+}
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + label {
+  cursor: pointer;
+}
+
+[type=radio]:checked + label {
+  outline: 2px solid $yellow-600;
+  background-color: $yellow-100;
+}

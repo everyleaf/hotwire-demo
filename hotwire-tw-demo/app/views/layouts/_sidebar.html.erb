@@ -1,0 +1,42 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 250px;">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+    <svg class="bi me-2" width="40" height="32"><use xlink:href="#balloon-heart-fill"/></svg>
+    <span class="fs-4">みんここ</span>
+  </a>
+  <hr>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <%= link_to root_path, class: "nav-link #{active_css_class(root_path)}" do %>
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#house-heart"/></svg>
+        Home
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path(icon: Emotion.icons[:love]), class: "nav-link #{active_css_class(root_path + "?icon=0")}" do %>
+        <%== show_icon(Emotion.icons[:love], width: 30, height: 30) %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path(icon: Emotion.icons[:angry]), class: "nav-link #{active_css_class(root_path + "?icon=1")}" do %>
+        <span class="nav-icon">
+        <%== show_icon(Emotion.icons[:angry], width: 30, height: 30) %>
+        </span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path(icon: Emotion.icons[:smile]), class: "nav-link #{active_css_class(root_path + "?icon=2")}" do %>
+        <span class="nav-icon">
+        <%== show_icon(Emotion.icons[:smile], width: 30, height: 30) %>
+        </span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to new_emotion_path, class: "nav-link #{active_css_class(new_emotion_path)}" do %>
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#chat-heart"/></svg>
+        つぶやく
+      <% end %>
+    </li>
+  </ul>
+  <hr>
+  <small>@Hotwireことはじめデモ</small>
+</div>
