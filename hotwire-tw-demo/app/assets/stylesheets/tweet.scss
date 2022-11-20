@@ -35,3 +35,23 @@
 .tweet-footer-btn span {
   margin-left: 8px;
 }
+
+.avator-icon {
+  padding: 3px;
+}
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + label {
+  cursor: pointer;
+}
+
+[type=radio]:checked + label {
+  outline: 2px solid $yellow-600;
+  background-color: $yellow-100;
+}
