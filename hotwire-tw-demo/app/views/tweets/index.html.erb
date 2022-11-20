@@ -1,3 +1,7 @@
+<div class="d-flex justify-content-end">
+  <%= link_to "つぶやく", new_tweet_path, class: "btn btn-primary" %>
+</div>
+
 <ol class="tweet-list w-100">
   <% @tweets.each do |tweet| %>
     <li class="tweet-card">
