@@ -11,10 +11,10 @@
           </span>
         </div>
         <div class="tweet-card-avatar">
-          <%== show_icon(0) %>
+          <%== show_icon(tweet.icon) %>
         </div>
         <div class="tweet-text">
-          <p> <%= tweet.body %> </p>
+          <p> <%= simple_format tweet.body %> </p>
         </div>
         <div class="tweet-footer">
           <a class="tweet-footer-btn">
