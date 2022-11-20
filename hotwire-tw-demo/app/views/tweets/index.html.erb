@@ -1,13 +1,27 @@
-<div>
-  <ul class="list-group pmd-list pmd-card-list">
-    <% @tweets.each do |tweet| %>
-      <li class="list-group-item  d-flex">
-        <%== show_icon(tweet.icon) %>
-        <div class="media-body">
-          <h6> <%= tweet.name %> <h6>
-          <p class="pmd-list-subtitle"> <%= tweet.body %> </p>
+<ol class="tweet-list w-100">
+  <% @tweets.each do |tweet| %>
+    <li class="tweet-card">
+      <div class="tweet-content">
+        <div class="tweet-header">
+          <span class="fullname">
+            <strong><%= tweet.name %></strong>
+          </span>
+          <span class="tweet-time">
+            <%= "- #{l(tweet.created_at, format: :date)}" %>
+          </span>
         </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+        <div class="tweet-card-avatar">
+          <%== show_icon(0) %>
+        </div>
+        <div class="tweet-text">
+          <p> <%= tweet.body %> </p>
+        </div>
+        <div class="tweet-footer">
+          <a class="tweet-footer-btn">
+            <svg class="bi me-2" width="20" height="20"><use xlink:href="#balloon-heart-fill"/></svg><span>18</span>
+          </a>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ol>
