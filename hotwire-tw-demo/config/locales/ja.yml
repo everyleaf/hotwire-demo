@@ -2,3 +2,14 @@ ja:
   time:
     formats:
       date: ! '%Y/%m/%d'
+  activerecord:
+    attributes:
+      tweet:
+        name: なまえ
+        body: こころのこえ
+        icon: きもち
+    errors:
+      models:
+        tweet:
+          blank: を入力してください。
+          not_a_number: は数値で入力してください。
