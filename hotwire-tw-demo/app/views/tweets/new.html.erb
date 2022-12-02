@@ -1,38 +1,45 @@
-<h1>あたらしいこころのこえ</h1>
+<h1 class="mb-3">こころのこえをつぶやく</h1>
 <div>
   <% if @tweet && @tweet.errors.any? %>
-    <div class="alert.alert-danger">
-      <ul>
+    <div class="alert alert-danger">
+      <ul class="mb-0">
         <% @tweet.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  <%= form_with model: Tweet.new do |form| %>
-    <div>
-      <%= form.radio_button :icon, 0, class:"form-check-input" %>
-      <%= form.label :icon, value: "0" do%>
-        <%== show_icon(0) %>
-      <% end %>
-      <%= form.radio_button :icon, 1, class:"form-check-input" %>
-      <%= form.label :icon, value: 1 do%>
-        <%== show_icon(1) %>
-      <% end %>
+  <%= form_with model: Tweet.new, local: true do |form| %>
+    <div class="mb-3 row">
+      <%= form.label :icon, "きもち", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.radio_button :icon, 0, class: "form-check-input" %>
+        <%= form.label :icon, value: 0, class: "avator-icon" do%>
+          <%== show_icon(0) %>
+        <% end %>
+        <%= form.radio_button :icon, 1, class:"form-check-input" %>
+        <%= form.label :icon, value: 1, class: "avator-icon" do%>
+          <%== show_icon(1) %>
+        <% end %>
 
-      <%= form.radio_button :icon, 2, class:"form-check-input" %>
-      <%= form.label :icon, value: 2 do%>
-        <%== show_icon(2) %>
-      <% end %>
+        <%= form.radio_button :icon, 2, class: "form-check-input" %>
+        <%= form.label :icon, value: 2, class: "avator-icon" do%>
+          <%== show_icon(2) %>
+        <% end %>
+      </div>
     </div>
-    <div>
-      <%= form.label :name, "なまえ" %>
-      <%= form.text_field :name, class: "form-contorol" %>
+    <div class="mb-3 row">
+      <%= form.label :name, "なまえ", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :name, class: "form-contorol" %>
+      </div>
     </div>
-    <div>
-      <%= form.label :body, "こころのこえ" %>
-      <%= form.text_area :body, class: "form-contorol" %>
+    <div class="mb-3 row">
+      <%= form.label :body, "こころのこえ", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_area :body, class: "form-contorol" %>
+      </div>
     </div>
-    <%= submit_tag %>
+    <%= form.submit 'つぶやく', class: "btn btn-primary" %>
   <% end%>
 </div>
