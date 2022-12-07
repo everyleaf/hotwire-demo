@@ -15,7 +15,24 @@ class TweetsController < ApplicationController
   end
 
   def index
-    @tweets = Tweet.order(created_at: :desc)
+    scope = Tweet.all
+
+    if params[:icon]
+      scope =
+        case params[:icon].to_i
+          when Tweet.icons[:love]
+            scope.love
+          when Tweet.icons[:angry]
+            scope.angry
+          when Tweet.icons[:smile]
+            scope.smile
+          else
+           scope
+        end
+    end
+
+    @tweets = scope.order(created_at: :desc)
+
   end
 
   def show

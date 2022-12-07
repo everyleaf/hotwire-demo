@@ -8,7 +8,7 @@
     </span>
   </div>
   <div class="tweet-card-avatar">
-    <%== show_icon(tweet.icon) %>
+    <%== show_icon(Tweet.icons[tweet.icon]) %>
   </div>
   <div class="tweet-text">
     <p> <%= simple_format tweet.body %> </p>

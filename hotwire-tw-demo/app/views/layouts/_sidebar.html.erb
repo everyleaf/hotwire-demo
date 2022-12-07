@@ -12,9 +12,22 @@
       <% end %>
     </li>
     <li>
-      <%= link_to root_path, class: "nav-link link-dark" do %>
-        <svg class="bi me-2" width="20" height="20"><use xlink:href="#search-heart"/></svg>
-        Search
+      <%= link_to root_path(icon: Tweet.icons[:love]), class: "nav-link link-dark" do %>
+        <%== show_icon(Tweet.icons[:love], width: 30, height: 30) %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path(icon: Tweet.icons[:angry]), class: "nav-link link-dark" do %>
+        <span class="nav-icon">
+        <%== show_icon(Tweet.icons[:angry], width: 30, height: 30) %>
+        </span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path(icon: Tweet.icons[:smile]), class: "nav-link link-dark" do %>
+        <span class="nav-icon">
+        <%== show_icon(Tweet.icons[:smile], width: 30, height: 30) %>
+        </span>
       <% end %>
     </li>
     <li>
