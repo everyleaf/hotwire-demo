@@ -1,4 +1,6 @@
 class TweetsController < ApplicationController
+  before_action :find_tweet, only: [:show, :destroy, :like]
+
   def new
   end
 
@@ -17,16 +19,23 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
   end
 
   def destroy
-    @tweet = Tweet.find(params[:id])
     @tweet.destroy
     redirect_to action: :index
   end
 
+  def like
+    @tweet.update!({like_count: @tweet.like_count + 1})
+    redirect_to @tweet
+  end
+
   private
+
+  def find_tweet
+    @tweet = Tweet.find(params[:id])
+  end
 
   def tweet_params
     params.require(:tweet).permit([:icon, :name, :body])

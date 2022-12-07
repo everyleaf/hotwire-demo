@@ -14,9 +14,9 @@
     <p> <%= simple_format tweet.body %> </p>
   </div>
   <div class="tweet-footer">
-    <a class="tweet-footer-btn">
+    <%= button_to like_tweet_path(tweet), method: :put, class: "tweet-footer-btn" do %>
       <svg class="bi me-2" width="20" height="20"><use xlink:href="#balloon-heart-fill"/></svg><span><%=tweet.like_count  %></span>
-    </a>
+    <% end %>
     <%= button_to tweet, method: :delete, class: "tweet-footer-btn" do %>
       <svg class="bi me-2" width="20" height="20"><use xlink:href="#trash-fill"/></svg>
       <span>削除</span>

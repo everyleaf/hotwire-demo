@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "tweets#index"
-  resources :tweets, only: [:index, :new, :create, :destroy, :show]
+  resources :tweets, only: [:index, :new, :create, :destroy, :show] do
+    member do
+      put 'like'
+    end
+  end
 end
