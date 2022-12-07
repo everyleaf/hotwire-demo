@@ -1,11 +1,14 @@
+<%= turbo_stream_from "tweets" %>
 <div class="p-3 border bg-ligh">
-  <%= render partial: "new" %>
+  <%= render partial: "new",  locals: {tweet: Tweet.new} %>
 </div>
 
 <ol class="tweet-list w-100">
-  <% @tweets.each do |tweet| %>
-    <li class="tweet-card">
-      <%= render partial: "tweet", locals: {tweet: tweet} %>
-    </li>
+  <%= turbo_frame_tag "tweets" do %>
+    <% @tweets.each do |tweet| %>
+      <li class="tweet-card">
+        <%= render partial: "tweet", locals: {tweet: tweet} %>
+      </li>
+    <% end %>
   <% end %>
 </ol>

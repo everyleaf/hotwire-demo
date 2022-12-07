@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "tweet_form" do %>
+   <%= render partial: "new", locals: {tweet: Tweet.new} %>
+<% end %>
+
+<%= turbo_stream.prepend "tweets" do %>
+  <li class="tweet-card">
+    <%= render partial: "tweet", locals: {tweet: @tweet} %>
+  </li>
+<% end %>

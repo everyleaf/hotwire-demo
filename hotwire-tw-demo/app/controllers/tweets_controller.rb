@@ -1,17 +1,11 @@
 class TweetsController < ApplicationController
   before_action :find_tweet, only: [:show, :destroy, :like]
 
-  def new
-    @tweet = Tweet.new
-  end
-
   def create
     @tweet = Tweet.new(tweet_params)
 
-    if @tweet.save
-      @tweet = Tweet.new
-    else
-      render "_new", status: :unprocessable_entity
+    unless @tweet.save
+      render partial: "new", locals: {tweet: @tweet},  status: :unprocessable_entity
     end
   end
 
