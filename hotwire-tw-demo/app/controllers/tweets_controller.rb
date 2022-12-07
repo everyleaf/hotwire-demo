@@ -2,15 +2,16 @@ class TweetsController < ApplicationController
   before_action :find_tweet, only: [:show, :destroy, :like]
 
   def new
+    @tweet = Tweet.new
   end
 
   def create
     @tweet = Tweet.new(tweet_params)
 
     if @tweet.save
-      redirect_to action: :index
+      @tweet = Tweet.new
     else
-      render :new
+      render "_new", status: :unprocessable_entity
     end
   end
 
