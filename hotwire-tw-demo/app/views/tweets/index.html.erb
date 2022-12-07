@@ -5,27 +5,7 @@
 <ol class="tweet-list w-100">
   <% @tweets.each do |tweet| %>
     <li class="tweet-card">
-      <div class="tweet-content">
-        <div class="tweet-header">
-          <span class="fullname">
-            <strong><%= tweet.name %></strong>
-          </span>
-          <span class="tweet-time">
-            <%= link_to "- #{l(tweet.created_at, format: :date)}", tweet_path(tweet) %>
-          </span>
-        </div>
-        <div class="tweet-card-avatar">
-          <%== show_icon(tweet.icon) %>
-        </div>
-        <div class="tweet-text">
-          <p> <%= simple_format tweet.body %> </p>
-        </div>
-        <div class="tweet-footer">
-          <a class="tweet-footer-btn">
-            <svg class="bi me-2" width="20" height="20"><use xlink:href="#balloon-heart-fill"/></svg><span>18</span>
-          </a>
-        </div>
-      </div>
+      <%= render partial: "tweet", locals: {tweet: tweet} %>
     </li>
   <% end %>
 </ol>
