@@ -7,4 +7,6 @@ class Emotion < ApplicationRecord
   def like_countup!
     update!(like_count: like_count + 1)
   end
+
+  after_create_commit -> { broadcast_prepend_to("emotions") }
 end
