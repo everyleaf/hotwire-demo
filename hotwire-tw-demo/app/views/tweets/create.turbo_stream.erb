@@ -4,10 +4,3 @@
 <%= turbo_stream.replace "tweet_form" do %>
   <%= render partial: "new", locals: {tweet: @tweet.persisted? ? Tweet.new : @tweet} %>
 <% end %>
-<% if @tweet.persisted? %>
-  <%= turbo_stream.prepend "tweets" do %>
-    <li class="tweet-card">
-      <%= render partial: "tweet", locals: {tweet: @tweet} %>
-    </li>
-  <% end %>
-<% end %>
