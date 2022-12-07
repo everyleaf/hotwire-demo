@@ -16,6 +16,7 @@
   line-height: 20px;
   font-weight: normal;
 }
+
 .tweet-card-avatar {
   border-radius: 50%;
   height: 48px;
@@ -25,15 +26,26 @@
   margin-left: -58px;
 }
 
+.tweet-footer {
+  display: flex;
+}
+
 .tweet-footer-btn {
   margin-right: 30px;
 }
+
 .tweet-footer-btn i, .tweet-footer-btn span {
   color: #657786;
   font-size: 16px;
 }
+
 .tweet-footer-btn span {
   margin-left: 8px;
+}
+
+button.tweet-footer-btn {
+  border: none;
+  background-color: white;
 }
 
 .avator-icon {

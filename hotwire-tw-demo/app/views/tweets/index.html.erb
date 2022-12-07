@@ -11,7 +11,7 @@
             <strong><%= tweet.name %></strong>
           </span>
           <span class="tweet-time">
-            <%= "- #{l(tweet.created_at, format: :date)}" %>
+            <%= link_to "- #{l(tweet.created_at, format: :date)}", tweet_path(tweet) %>
           </span>
         </div>
         <div class="tweet-card-avatar">

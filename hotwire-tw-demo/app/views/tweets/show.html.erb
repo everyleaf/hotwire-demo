@@ -1,0 +1,26 @@
+<h1 class="mb-3">こころのこえ</h1>
+  <div class="tweet-content">
+    <div class="tweet-header">
+      <span class="fullname">
+        <strong><%= @tweet.name %></strong>
+      </span>
+      <span class="tweet-time">
+        <%= "- #{l(@tweet.created_at, format: :date)}" %>
+      </span>
+    </div>
+    <div class="tweet-card-avatar">
+      <%== show_icon(@tweet.icon) %>
+    </div>
+    <div class="tweet-text">
+      <p> <%= simple_format @tweet.body %> </p>
+    </div>
+    <div class="tweet-footer">
+      <a class="tweet-footer-btn">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#balloon-heart-fill"/></svg><span>18</span>
+      </a>
+      <%= button_to @tweet, method: :delete, class: "tweet-footer-btn" do %>
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#trash-fill"/></svg>
+        <span>削除</span>
+      <% end %>
+    </div>
+  </div>
