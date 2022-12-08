@@ -35,7 +35,7 @@ class TweetsController < ApplicationController
 
   def destroy
     @tweet.destroy
-    redirect_to action: :index
+    redirect_to action: :index, status: :see_other
   end
 
   def like

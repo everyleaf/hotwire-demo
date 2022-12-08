@@ -5,4 +5,5 @@ class Tweet < ApplicationRecord
   enum :icon, { love: 0, angry: 1, smile: 2 }
 
   after_create_commit -> { broadcast_prepend_to("tweets") }
+  after_destroy_commit -> { broadcast_remove_to("tweets") }
 end

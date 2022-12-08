@@ -5,10 +5,6 @@
 
 <ol class="tweet-list w-100">
   <%= turbo_frame_tag "tweets" do %>
-    <% @tweets.each do |tweet| %>
-      <li class="tweet-card">
-        <%= render partial: "tweet", locals: {tweet: tweet} %>
-      </li>
-    <% end %>
+    <%= render partial: "tweet", collection: @tweets %>
   <% end %>
 </ol>
