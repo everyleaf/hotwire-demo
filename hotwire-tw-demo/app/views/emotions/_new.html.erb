@@ -10,20 +10,20 @@
         </ul>
       </div>
     <% end %>
-    <%= form_with model: emotion, local: true do |form| %>
+    <%= form_with model: emotion, local: true, html: { data: {controller: "emotions", action: "emotions#submit"}, id: "form" } do |form| %>
       <div class="mb-3 row">
         <%= form.label :icon, "きもち", class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= form.radio_button :icon, :love, class: "form-check-input" %>
+          <%= form.radio_button :icon, :love, class: "form-check-input", data: {emotions_target: "icon"} %>
           <%= form.label :icon, value: :love, class: "avator-icon" do %>
             <%== show_icon(Emotion.icons[:love]) %>
           <% end %>
-          <%= form.radio_button :icon, :angry, class: "form-check-input" %>
+          <%= form.radio_button :icon, :angry, class: "form-check-input", data: {emotions_target: "icon"} %>
           <%= form.label :icon, value: :angry, class: "avator-icon" do %>
             <%== show_icon(Emotion.icons[:angry]) %>
           <% end %>
 
-          <%= form.radio_button :icon, :smile, class: "form-check-input" %>
+          <%= form.radio_button :icon, :smile, class: "form-check-input", data: {emotions_target: "icon"} %>
           <%= form.label :icon, value: :smile, class: "avator-icon" do %>
             <%== show_icon(Emotion.icons[:smile]) %>
           <% end %>
@@ -32,13 +32,13 @@
       <div class="mb-3 row">
         <%= form.label :name, "なまえ", class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= form.text_field :name, class: "form-contorol" %>
+          <%= form.text_field :name, class: "form-contorol", data: {emotions_target: "name"} %>
         </div>
       </div>
       <div class="mb-3 row">
         <%= form.label :body, "こころのこえ", class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= form.text_area :body, class: "form-contorol col-sm-10" %>
+          <%= form.text_area :body, class: "form-contorol col-sm-10", data: {emotions_target: "body"} %>
         </div>
       </div>
       <%= form.submit 'つぶやく', class: "btn btn-primary" %>
