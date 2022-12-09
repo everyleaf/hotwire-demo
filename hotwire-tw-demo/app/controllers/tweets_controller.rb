@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to action: :index
     else
-      render :new
+      render :index
     end
   end
 
@@ -32,7 +32,6 @@ class TweetsController < ApplicationController
     end
 
     @tweets = scope.order(created_at: :desc)
-
   end
 
   def show
