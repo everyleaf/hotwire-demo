@@ -3,9 +3,5 @@
 </div>
 
 <ol class="tweet-list w-100">
-  <% @tweets.each do |tweet| %>
-    <li class="tweet-card">
-      <%= render partial: "tweet", locals: {tweet: tweet} %>
-    </li>
-  <% end %>
+  <%= render partial: "tweet", collection: @tweets %>
 </ol>
