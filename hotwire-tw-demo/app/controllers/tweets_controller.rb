@@ -43,7 +43,7 @@ class TweetsController < ApplicationController
   end
 
   def like
-    @tweet.update!({like_count: @tweet.like_count + 1})
+    @tweet.like_countup!
     redirect_to @tweet
   end
 
