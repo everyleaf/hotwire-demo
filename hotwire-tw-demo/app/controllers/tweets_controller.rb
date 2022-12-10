@@ -8,8 +8,8 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
 
-    unless @tweet.save
-      render partial: "new", locals: {tweet: @tweet},  status: :unprocessable_entity
+    if @tweet.save
+      flash.now.notice = "こころのこえをつぶやきました。"
     end
   end
 
