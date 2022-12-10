@@ -8,10 +8,8 @@ class EmotionsController < ApplicationController
   def create
     @emotion = Emotion.new(emotion_params)
 
-    if @emotion.save
-      redirect_to action: :index
-    else
-      render :index, status: :unprocessable_entity
+    unless @emotion.save
+      render partial: "new", locals: {emotion: @emotion},  status: :unprocessable_entity
     end
   end
 

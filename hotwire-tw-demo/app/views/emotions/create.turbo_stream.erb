@@ -1,0 +1,8 @@
+<%= turbo_stream.replace "emotion_form" do %>
+   <%= render partial: "new", locals: {emotion: Emotion.new} %>
+<% end %>
+<%= turbo_stream.prepend "emotions" do %>
+  <li class="emotion-card">
+    <%= render partial: "emotion", locals: {emotion: @emotion} %>
+  </li>
+<% end %>
