@@ -3,5 +3,7 @@
 </div>
 
 <ol class="tweet-list w-100">
-  <%= render partial: "tweet", collection: @tweets %>
+  <%= turbo_frame_tag "tweets" do %>
+    <%= render partial: "tweet", collection: @tweets %>
+  <% end %>
 </ol>
