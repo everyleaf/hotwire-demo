@@ -8,10 +8,8 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
 
-    if @tweet.save
-      redirect_to action: :index
-    else
-      render :index
+    unless @tweet.save
+      render partial: "new", locals: {tweet: @tweet},  status: :unprocessable_entity
     end
   end
 
