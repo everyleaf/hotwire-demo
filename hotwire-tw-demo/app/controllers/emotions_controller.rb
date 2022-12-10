@@ -8,8 +8,8 @@ class EmotionsController < ApplicationController
   def create
     @emotion = Emotion.new(emotion_params)
 
-    unless @emotion.save
-      render partial: "new", locals: {emotion: @emotion},  status: :unprocessable_entity
+    if @emotion.save
+      flash.now.notice = "こころのこえをつぶやきました。"
     end
   end
 
