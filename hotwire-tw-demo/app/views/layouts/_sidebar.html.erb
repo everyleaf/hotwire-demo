@@ -12,19 +12,19 @@
       <% end %>
     </li>
     <li>
-      <%= link_to root_path(icon: Emotion.icons[:love]), class: "nav-link #{active_css_class(root_path + "?icon=0")}" do %>
+      <%= link_to root_path(icon: Emotion.icons[:love]), class: "nav-link #{active_css_class(root_path + "?icon=0")}", data: { turbo_frame: "emotions" } do %>
         <%== show_icon(Emotion.icons[:love], width: 30, height: 30) %>
       <% end %>
     </li>
     <li>
-      <%= link_to root_path(icon: Emotion.icons[:angry]), class: "nav-link #{active_css_class(root_path + "?icon=1")}" do %>
+      <%= link_to root_path(icon: Emotion.icons[:angry]), class: "nav-link #{active_css_class(root_path + "?icon=1")}", data: { turbo_frame: "emotions" } do %>
         <span class="nav-icon">
         <%== show_icon(Emotion.icons[:angry], width: 30, height: 30) %>
         </span>
       <% end %>
     </li>
     <li>
-      <%= link_to root_path(icon: Emotion.icons[:smile]), class: "nav-link #{active_css_class(root_path + "?icon=2")}" do %>
+      <%= link_to root_path(icon: Emotion.icons[:smile]), class: "nav-link #{active_css_class(root_path + "?icon=2")}", data: { turbo_frame: "emotions" } do %>
         <span class="nav-icon">
         <%== show_icon(Emotion.icons[:smile], width: 30, height: 30) %>
         </span>
