@@ -9,4 +9,6 @@ class Tweet < ApplicationRecord
   end
 
   after_create_commit -> { broadcast_prepend_to("tweets") }
+  after_destroy_commit -> { broadcast_remove_to("tweets") }
+  # NOTE: broadcasts_to -> (_tweet) { "tweets" }, inserts_by: :prepend でも代用可
 end
