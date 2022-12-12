@@ -1,5 +1,7 @@
+<div id="flash">
+</div>
 <div class="p-3 border bg-ligh">
-  <%= render partial: "new" %>
+  <%= render partial: "new", locals: {emotion: Emotion.new} %>
 </div>
 
 <ol class="emotion-list w-100">

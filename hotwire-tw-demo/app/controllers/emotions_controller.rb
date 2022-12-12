@@ -9,9 +9,7 @@ class EmotionsController < ApplicationController
     @emotion = Emotion.new(emotion_params)
 
     if @emotion.save
-      redirect_to action: :index
-    else
-      render :index, status: :unprocessable_entity
+      flash.now.notice = "こころのこえをつぶやきました。"
     end
   end
 

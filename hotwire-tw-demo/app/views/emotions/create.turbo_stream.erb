@@ -1,0 +1,13 @@
+<%= turbo_stream.update "flash" do %>
+  <%= render partial: "layouts/flash" %>
+<% end %>
+<%= turbo_stream.replace "emotion_form" do %>
+  <%= render partial: "new", locals: {emotion: @emotion.persisted? ? Emotion.new : @emotion} %>
+<% end %>
+<% if @emotion.persisted? %>
+  <%= turbo_stream.prepend "emotions" do %>
+    <li class="emotion-card">
+      <%= render partial: "emotion", locals: {emotion: @emotion} %>
+    </li>
+  <% end %>
+<% end %>
