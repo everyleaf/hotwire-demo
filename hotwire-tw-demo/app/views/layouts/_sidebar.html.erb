@@ -12,19 +12,19 @@
       <% end %>
     </li>
     <li>
-      <%= link_to root_path(icon: Tweet.icons[:love]), class: "nav-link link-dark" do %>
+      <%= link_to root_path(icon: Tweet.icons[:love]), class: "nav-link link-dark", data: { turbo_frame: "tweets" } do %>
         <%== show_icon(Tweet.icons[:love], width: 30, height: 30) %>
       <% end %>
     </li>
     <li>
-      <%= link_to root_path(icon: Tweet.icons[:angry]), class: "nav-link link-dark" do %>
+      <%= link_to root_path(icon: Tweet.icons[:angry]), class: "nav-link link-dark", data: { turbo_frame: "tweets" } do %>
         <span class="nav-icon">
         <%== show_icon(Tweet.icons[:angry], width: 30, height: 30) %>
         </span>
       <% end %>
     </li>
     <li>
-      <%= link_to root_path(icon: Tweet.icons[:smile]), class: "nav-link link-dark" do %>
+      <%= link_to root_path(icon: Tweet.icons[:smile]), class: "nav-link link-dark", data: { turbo_frame: "tweets" } do %>
         <span class="nav-icon">
         <%== show_icon(Tweet.icons[:smile], width: 30, height: 30) %>
         </span>
