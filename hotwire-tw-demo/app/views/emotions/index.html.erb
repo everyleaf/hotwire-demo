@@ -3,5 +3,7 @@
 </div>
 
 <ol class="emotion-list w-100">
-  <%= render partial: "emotion", collection: @emotions %>
+  <%= turbo_frame_tag "emotions" do %>
+    <%= render partial: "emotion", collection: @emotions %>
+  <% end %>
 </ol>
