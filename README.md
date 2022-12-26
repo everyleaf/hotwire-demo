@@ -1,18 +1,18 @@
 # hotwire-demo
 
-Rails7 で構築された非Hotwireのアプリを、　Hotwire各技術で改良していくリポジトリです。
+Rails7 で構築された非Hotwireのアプリを、Hotwire各技術で改良していくリポジトリです。
 各PRのブランチでHotwireの使い方のサンプルを[demo-n]の順に追うことができます。
 
 ## 各PR
 
-[[demo-1] Hotwireを使うように設定、Drive対応](https://github.com/everyleaf/hotwire-demo/pull/13)
+[[demo-1]Hotwireを使うように設定、Turbo Drive対応](https://github.com/everyleaf/hotwire-demo/pull/13)
 
-[[demo-2]Frameを使って一覧部分を読み込む](https://github.com/everyleaf/hotwire-demo/pull/9)
+[[demo-2]Turbo Frameを使って一覧部分を読み込む](https://github.com/everyleaf/hotwire-demo/pull/9)
 
-[[demo-3]Streamを使って二箇所を更新する](https://github.com/everyleaf/hotwire-demo/pull/10)
+[[demo-3]Turbo Streamを使って二箇所を更新する](https://github.com/everyleaf/hotwire-demo/pull/10)
 
 
-[[demo-4] WebSocketを使ったブロードキャスト方式に変更](https://github.com/everyleaf/hotwire-demo/pull/11)
+[[demo-4]WebSocketを使ったブロードキャスト方式に変更](https://github.com/everyleaf/hotwire-demo/pull/11)
 
 [[demo-5]Stimulusを使ったイベントによるフォーム内容チェック](https://github.com/everyleaf/hotwire-demo/pull/12)
 
@@ -36,12 +36,12 @@ Rails7 で構築された非Hotwireのアプリを、　Hotwire各技術で改�
 #### PostgreSQL（と、ブランチによってredis）の起動
 
 ```
-docker-compose up -d
+$ docker-compose up -d
 ```
 
 #### Railsの起動
 
 ```
-cd hotwire-tw-demo
-bin/dev
+$ cd hotwire-tw-demo
+$ bin/dev
 ```
