@@ -55,6 +55,6 @@ $ bin/rails db:create db:migrate
 $ bin/dev
 ```
 
-##　コントリビュート方法 
+## コントリビュート方法 
 
 色々と不足がありそうなので、Issue, PR 等歓迎です
