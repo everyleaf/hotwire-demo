@@ -3,10 +3,14 @@
 Rails7 で構築された非Hotwireのアプリを、Hotwire各技術で改良していくリポジトリです。
 各PRのブランチでHotwireの使い方のサンプルを[demo-n]の順に追うことができます。
 
+## 想定対象・利用目的
+ 
+ Railsは使っているけどHotwireのキャッチアップはまだできてないな、使ってみたいな、というような方の気軽な練習になればと思っています
+
 ## Hotwire概説/各PR解説資料（Rubyアソシエーション　セミナー『Hotwireことはじめ』より）
 [Hotwire ことはじめ .pdf](https://github.com/everyleaf/hotwire-demo/files/10302496/Hotwire.2.pdf)
 
-## 各PR
+## 各PR（順にやっていくと、Hotiwireを使ってないアプリがHotiwire化していきます）
 
 [[demo-1]Hotwireを使うように設定、Turbo Drive対応](https://github.com/everyleaf/hotwire-demo/pull/13)
 
@@ -42,9 +46,15 @@ Rails7 で構築された非Hotwireのアプリを、Hotwire各技術で改良�
 $ docker-compose up -d
 ```
 
-#### Railsの起動
+#### Railsの設定・起動
 
 ```
 $ cd hotwire-tw-demo
+$ yarn install
+$ bin/rails db:create db:migrate
 $ bin/dev
 ```
+
+##　コントリビュート方法 
+
+色々と不足がありそうなので、Issue, PR 等歓迎です
