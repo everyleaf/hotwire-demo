@@ -14,9 +14,9 @@ Rails7 で構築された非Hotwireのアプリを、Hotwire各技術で改良�
 
 [[demo-1]Hotwireを使うように設定、Turbo Drive対応](https://github.com/everyleaf/hotwire-demo/pull/13)
 
-[[demo-2]Turbo Frameを使って一覧部分を読み込む](https://github.com/everyleaf/hotwire-demo/pull/9)
+[[demo-2]Turbo Framesを使って一覧部分を読み込む](https://github.com/everyleaf/hotwire-demo/pull/9)
 
-[[demo-3]Turbo Streamを使って二箇所を更新する](https://github.com/everyleaf/hotwire-demo/pull/10)
+[[demo-3]Turbo Streamsを使って二箇所を更新する](https://github.com/everyleaf/hotwire-demo/pull/10)
 
 
 [[demo-4]WebSocketを使ったブロードキャスト方式に変更](https://github.com/everyleaf/hotwire-demo/pull/11)
