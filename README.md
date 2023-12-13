@@ -51,6 +51,7 @@ $ docker-compose up -d
 ```
 $ cd hotwire-tw-demo
 $ yarn install
+$ bundle install
 $ bin/rails db:create db:migrate
 $ bin/dev
 ```
