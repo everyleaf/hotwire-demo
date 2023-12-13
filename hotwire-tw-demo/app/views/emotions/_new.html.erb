@@ -9,7 +9,7 @@
       </ul>
     </div>
   <% end %>
-  <%= form_with model: @emotion || Emotion.new, local: true do |form| %>
+  <%= form_with model: @emotion || Emotion.new do |form| %>
     <div class="mb-3 row">
       <%= form.label :icon, "きもち", class: "col-sm-2 col-form-label" %>
       <div class="col-sm-10">

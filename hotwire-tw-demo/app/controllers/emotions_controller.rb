@@ -11,7 +11,7 @@ class EmotionsController < ApplicationController
     if @emotion.save
       redirect_to action: :index
     else
-      render :index
+      render :index, status: :unprocessable_entity
     end
   end
 
@@ -40,7 +40,7 @@ class EmotionsController < ApplicationController
 
   def destroy
     @emotion.destroy
-    redirect_to action: :index
+    redirect_to action: :index, status: :see_other
   end
 
   def like
