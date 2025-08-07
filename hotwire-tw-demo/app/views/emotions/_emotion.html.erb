@@ -1,27 +1,29 @@
-<li class="emotion-card">
-  <div class="emotion-content">
-    <div class="emotion-header">
-      <span class="fullname">
-        <strong><%= emotion.name %></strong>
-      </span>
-      <span class="emotion-time">
-        <%= link_to "- #{l(emotion.created_at, format: :date)}", emotion_path(emotion) %>
-      </span>
+<%= turbo_frame_tag emotion do %>
+  <li class="emotion-card">
+    <div class="emotion-content">
+      <div class="emotion-header">
+        <span class="fullname">
+          <strong><%= emotion.name %></strong>
+        </span>
+        <span class="emotion-time">
+          <%= link_to "- #{l(emotion.created_at, format: :date)}", emotion_path(emotion) %>
+        </span>
+      </div>
+      <div class="emotion-card-avatar">
+        <%== show_icon(Emotion.icons[emotion.icon]) %>
+      </div>
+      <div class="emotion-text">
+        <p> <%= simple_format emotion.body %> </p>
+      </div>
+      <div class="emotion-footer">
+        <%= button_to like_emotion_path(emotion), method: :put, class: "emotion-footer-btn" do %>
+          <svg class="bi me-2" width="20" height="20"><use xlink:href="#balloon-heart-fill"/></svg><span><%=emotion.like_count %></span>
+        <% end %>
+        <%= button_to emotion, method: :delete, class: "emotion-footer-btn" do %>
+          <svg class="bi me-2" width="20" height="20"><use xlink:href="#trash-fill"/></svg>
+          <span>削除</span>
+        <% end %>
+      </div>
     </div>
-    <div class="emotion-card-avatar">
-      <%== show_icon(Emotion.icons[emotion.icon]) %>
-    </div>
-    <div class="emotion-text">
-      <p> <%= simple_format emotion.body %> </p>
-    </div>
-    <div class="emotion-footer">
-      <%= button_to like_emotion_path(emotion), method: :put, class: "emotion-footer-btn" do %>
-        <svg class="bi me-2" width="20" height="20"><use xlink:href="#balloon-heart-fill"/></svg><span><%=emotion.like_count %></span>
-      <% end %>
-      <%= button_to emotion, method: :delete, class: "emotion-footer-btn" do %>
-        <svg class="bi me-2" width="20" height="20"><use xlink:href="#trash-fill"/></svg>
-        <span>削除</span>
-      <% end %>
-    </div>
-  </div>
-</li>
+  </li>
+<% end %>
